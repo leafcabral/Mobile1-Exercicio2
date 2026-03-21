@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<!-- region Guidelines-->
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_h_top"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.1" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_h_middle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.3" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_v_left"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.1" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_v_right"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.9" />
+	<!-- endregion -->
+
+	<ImageView
+		android:id="@+id/image_movie_cover"
+		android:layout_width="wrap_content"
+		android:layout_height="500dp"
+		android:foreground="#40000000"
+		android:scaleType="centerCrop"
+		app:srcCompat="@mipmap/movie_cover_marty_supreme"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.0" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/layout_navbar"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_h_top"
+		app:layout_constraintEnd_toStartOf="@+id/guideline_v_right"
+		app:layout_constraintStart_toStartOf="@+id/guideline_v_left">
+
+		<ImageView
+			android:id="@+id/image_app_icon"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			app:srcCompat="@drawable/netflix_logo"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<LinearLayout
+			android:id="@+id/layout_top_navbar"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="64dp"
+			android:gravity="center"
+			android:orientation="horizontal"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/image_app_icon"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<TextView
+				android:id="@+id/text_navbar_series"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@string/navbar_series"
+				android:textAlignment="center" />
+
+			<TextView
+				android:id="@+id/text_navbar_movies"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@string/navbar_movies"
+				android:textAlignment="center" />
+
+			<TextView
+				android:id="@+id/text_navbar_mylist"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@string/navbar_mylist"
+				android:textAlignment="center" />
+		</LinearLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/layout_movie"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toBottomOf="@+id/image_movie_cover"
+		app:layout_constraintEnd_toStartOf="@+id/guideline_v_right"
+		app:layout_constraintStart_toStartOf="@+id/guideline_v_left"
+		app:layout_constraintTop_toTopOf="@+id/guideline_h_middle">
+
+		<ImageView
+			android:id="@+id/image_movie_title"
+			android:layout_width="0dp"
+			android:layout_height="110dp"
+			app:layout_constraintBottom_toTopOf="@+id/layout_movie_tags"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_chainStyle="spread_inside"
+			app:srcCompat="@mipmap/movie_logo_marty_supreme" />
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/layout_movie_tags"
+			android:layout_width="269dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="24dp"
+			app:layout_constraintBottom_toTopOf="@+id/layout_movie_actions"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/image_movie_title">
+
+			<TextView
+				android:id="@+id/text_movie_tag1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="@string/featured_tag1"
+				android:textAlignment="center"
+				app:layout_constraintBaseline_toBaselineOf="@+id/text_movie_tag2"
+				app:layout_constraintEnd_toStartOf="@+id/text_movie_tag2"
+				app:layout_constraintStart_toStartOf="parent" />
+
+			<TextView
+				android:id="@+id/text_movie_tag2"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="@string/featured_tag2"
+				android:textAlignment="center"
+				app:layout_constraintEnd_toStartOf="@+id/text_movie_tag3"
+				app:layout_constraintStart_toEndOf="@+id/text_movie_tag1"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<TextView
+				android:id="@+id/text_movie_tag3"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="@string/featured_tag3"
+				android:textAlignment="center"
+				app:layout_constraintBaseline_toBaselineOf="@+id/text_movie_tag2"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/text_movie_tag2" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/layout_movie_actions"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/layout_movie_tags">
+
+			<Button
+				android:id="@+id/button_movie_mylist"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:background="@android:color/transparent"
+				android:text="@string/featured_mylist"
+				android:textSize="11sp"
+				app:icon="@drawable/icon_plus"
+				app:iconGravity="top"
+				app:iconSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/button_movie_watch"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<Button
+				android:id="@+id/button_movie_watch"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:backgroundTint="@color/movie_accent"
+				android:text="@string/featured_watch"
+				android:textSize="14sp"
+				app:icon="@drawable/icon_play"
+				app:iconSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/button_movie_details"
+				app:layout_constraintStart_toEndOf="@+id/button_movie_mylist"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<Button
+				android:id="@+id/button_movie_details"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:background="@android:color/transparent"
+				android:text="@string/featured_details"
+				android:textSize="11sp"
+				app:icon="@drawable/icon_info"
+				app:iconGravity="top"
+				app:iconSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/button_movie_watch"
+				app:layout_constraintTop_toTopOf="parent" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<TextView
+		android:id="@+id/text_content_releases"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:text="@string/content_releases"
+		android:textSize="14sp"
+		app:layout_constraintStart_toStartOf="@+id/guideline_v_left"
+		app:layout_constraintTop_toBottomOf="@+id/image_movie_cover" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/layout_content_releases"
+		android:layout_width="0dp"
+		android:layout_height="120dp"
+		app:layout_constraintEnd_toStartOf="@+id/guideline_v_right"
+		app:layout_constraintStart_toStartOf="@+id/guideline_v_left"
+		app:layout_constraintTop_toBottomOf="@+id/text_content_releases">
+
+		<ImageView
+			android:id="@+id/image_poster_1"
+			android:layout_width="100dp"
+			android:layout_height="0dp"
+			android:scaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/image_poster_2"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintHorizontal_chainStyle="spread_inside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@mipmap/movie_poster_interstellar" />
+
+		<ImageView
+			android:id="@+id/image_poster_2"
+			android:layout_width="100dp"
+			android:layout_height="0dp"
+			android:scaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/image_poster_3"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/image_poster_1"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@mipmap/movie_poster_getout" />
+
+		<ImageView
+			android:id="@+id/image_poster_3"
+			android:layout_width="100dp"
+			android:layout_height="0dp"
+			android:scaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/image_poster_2"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@mipmap/movie_poster_coda" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/app_creator"
+		android:textSize="20sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/guideline_v_right" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

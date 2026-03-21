@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">NetflixLayout</string>
+	<string name="navbar_series">Series</string>
+	<string name="navbar_movies">Movies</string>
+	<string name="navbar_mylist">My List</string>
+	<string name="featured_tag1">Drama</string>
+	<string name="featured_tag2">Sports</string>
+	<string name="featured_tag3">Thriller</string>
+	<string name="featured_mylist">My List</string>
+	<string name="featured_details">Details</string>
+	<string name="content_releases">Releases</string>
+	<string name="featured_watch">Watch</string>
+</resources>

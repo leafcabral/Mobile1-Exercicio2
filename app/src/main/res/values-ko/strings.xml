@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">NetflixLayout</string>
+	<string name="navbar_series">시리즈</string>
+	<string name="navbar_movies">영화</string>
+	<string name="navbar_mylist">내 목록</string>
+	<string name="featured_tag2">스포츠</string>
+	<string name="featured_tag3">스릴러</string>
+	<string name="featured_mylist">내 목록</string>
+	<string name="featured_tag1">드라마</string>
+	<string name="featured_watch">보다</string>
+	<string name="featured_details">디테일</string>
+	<string name="content_releases">릴리스</string>
+</resources>
