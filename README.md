@@ -8,3 +8,7 @@ Recriar o layout, de forma simplificada, da tela inicial da Netflix para celular
 ## Formalidades
 Trabalho apresentado à disciplina de Dispositivos Móveis I do Curso de Informática para Internet do IFES campus Serra, como requisito parcial para a avaliação
 Orientador: Profa. Marta Talitha Carvalho Freire Mendes
+
+## Capturas de tela
+![Design e Blueprint da tela principla](screenshots/design_and_blueprint.png)
+![Tabela de traduções](screenshots/translation_table.png)
