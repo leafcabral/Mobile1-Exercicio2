@@ -63,13 +63,12 @@
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
 
-		<LinearLayout
+		<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/layout_top_navbar"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="64dp"
 			android:gravity="center"
-			android:orientation="horizontal"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/image_app_icon"
@@ -77,28 +76,34 @@
 
 			<TextView
 				android:id="@+id/text_navbar_series"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
 				android:text="@string/navbar_series"
-				android:textAlignment="center" />
+				android:textAlignment="center"
+				app:layout_constraintBaseline_toBaselineOf="@+id/text_navbar_movies"
+				app:layout_constraintEnd_toStartOf="@+id/text_navbar_movies"
+				app:layout_constraintStart_toStartOf="parent" />
 
 			<TextView
 				android:id="@+id/text_navbar_movies"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
 				android:text="@string/navbar_movies"
-				android:textAlignment="center" />
+				android:textAlignment="center"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/text_navbar_mylist"
+				app:layout_constraintStart_toEndOf="@+id/text_navbar_series" />
 
 			<TextView
 				android:id="@+id/text_navbar_mylist"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
 				android:text="@string/navbar_mylist"
-				android:textAlignment="center" />
-		</LinearLayout>
+				android:textAlignment="center"
+				app:layout_constraintBaseline_toBaselineOf="@+id/text_navbar_movies"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/text_navbar_movies" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 	<androidx.constraintlayout.widget.ConstraintLayout
