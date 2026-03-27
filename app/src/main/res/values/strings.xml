@@ -1,6 +1,6 @@
 <resources>
 	<string name="app_name">NetflixLayout</string>
-	<string name="app_creator" translatable="false">Rafeal Cabral Lopes</string>
+	<string name="app_creator" translatable="false">Rafael Cabral Lopes</string>
 
 	<string name="navbar_series">Séries</string>
 	<string name="navbar_movies">Filmes</string>
