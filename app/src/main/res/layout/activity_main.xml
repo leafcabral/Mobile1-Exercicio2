@@ -16,11 +16,18 @@
 		app:layout_constraintGuide_percent="0.1" />
 
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_h_middle"
+		android:id="@+id/guideline_h_movie_title_top"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.3" />
+		app:layout_constraintGuide_percent="0.2" />
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_h_movie_bottom"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.45" />
 
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_v_left"
@@ -40,11 +47,12 @@
 	<ImageView
 		android:id="@+id/image_movie_cover"
 		android:layout_width="wrap_content"
-		android:layout_height="500dp"
+		android:layout_height="0dp"
 		android:foreground="#40000000"
 		android:scaleType="centerCrop"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="@id/guideline_h_movie_bottom"
 		app:srcCompat="@mipmap/movie_cover_marty_supreme" />
 
 	<androidx.constraintlayout.widget.ConstraintLayout
@@ -110,10 +118,10 @@
 		android:id="@+id/layout_movie"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		app:layout_constraintBottom_toBottomOf="@+id/image_movie_cover"
+		app:layout_constraintBottom_toBottomOf="@+id/guideline_h_movie_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_v_right"
 		app:layout_constraintStart_toStartOf="@+id/guideline_v_left"
-		app:layout_constraintTop_toTopOf="@+id/guideline_h_middle">
+		app:layout_constraintTop_toTopOf="@+id/guideline_h_movie_title_top">
 
 		<ImageView
 			android:id="@+id/image_movie_title"
@@ -130,8 +138,6 @@
 			android:id="@+id/layout_movie_tags"
 			android:layout_width="269dp"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="24dp"
-			app:layout_constraintBottom_toTopOf="@+id/layout_movie_actions"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/image_movie_title">
@@ -175,7 +181,8 @@
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/layout_movie_tags">
+			app:layout_constraintTop_toBottomOf="@+id/layout_movie_tags"
+			app:layout_constraintVertical_bias="1.0">
 
 			<Button
 				android:id="@+id/button_movie_mylist"
@@ -187,6 +194,7 @@
 				app:icon="@drawable/icon_plus"
 				app:iconGravity="top"
 				app:iconSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
 				app:layout_constraintEnd_toStartOf="@+id/button_movie_watch"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
@@ -215,6 +223,7 @@
 				app:icon="@drawable/icon_info"
 				app:iconGravity="top"
 				app:iconSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toEndOf="@+id/button_movie_watch"
 				app:layout_constraintTop_toTopOf="parent" />
