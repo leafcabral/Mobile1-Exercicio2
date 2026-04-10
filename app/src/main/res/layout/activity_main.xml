@@ -20,7 +20,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.2" />
+		app:layout_constraintGuide_percent="0.16" />
 
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_h_movie_bottom"
@@ -127,34 +127,34 @@
 			android:id="@+id/image_movie_title"
 			android:layout_width="0dp"
 			android:layout_height="110dp"
-			app:layout_constraintBottom_toTopOf="@+id/layout_movie_tags"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintVertical_chainStyle="spread_inside"
 			app:srcCompat="@mipmap/movie_logo_marty_supreme" />
 
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:id="@+id/layout_movie_tags"
-			android:layout_width="269dp"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/image_movie_title">
+			app:layout_constraintTop_toBottomOf="@+id/image_movie_title"
+			android:layout_marginTop="10dp">
 
 			<TextView
 				android:id="@+id/text_movie_tag1"
-				android:layout_width="0dp"
+				android:layout_width="80dp"
 				android:layout_height="wrap_content"
 				android:text="@string/featured_tag1"
 				android:textAlignment="center"
 				app:layout_constraintBaseline_toBaselineOf="@+id/text_movie_tag2"
 				app:layout_constraintEnd_toStartOf="@+id/text_movie_tag2"
+				app:layout_constraintHorizontal_chainStyle="packed"
 				app:layout_constraintStart_toStartOf="parent" />
 
 			<TextView
 				android:id="@+id/text_movie_tag2"
-				android:layout_width="0dp"
+				android:layout_width="80dp"
 				android:layout_height="wrap_content"
 				android:text="@string/featured_tag2"
 				android:textAlignment="center"
@@ -164,7 +164,7 @@
 
 			<TextView
 				android:id="@+id/text_movie_tag3"
-				android:layout_width="0dp"
+				android:layout_width="80dp"
 				android:layout_height="wrap_content"
 				android:text="@string/featured_tag3"
 				android:textAlignment="center"
@@ -180,9 +180,7 @@
 			android:gravity="center"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/layout_movie_tags"
-			app:layout_constraintVertical_bias="1.0">
+			app:layout_constraintStart_toStartOf="parent">
 
 			<Button
 				android:id="@+id/button_movie_mylist"
